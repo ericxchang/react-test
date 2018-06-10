@@ -1,10 +1,22 @@
+/* 
+  @flow
+*/
+
 import React, { Component } from 'react';
 
-export default class Clock extends Component {
-    constructor(props) {
+type Props = {};
+type State = {
+    running: boolean,
+    current: Date
+};
+
+export default class Clock extends Component<Props, State> {
+    timerID: IntervalID;
+    
+    constructor(props: Props) {
         super(props);
         this.state = {
-            date: new Date(),
+            current: new Date(),
             running: false,
         }
     }
@@ -39,15 +51,15 @@ export default class Clock extends Component {
 
     tick() {
         this.setState({
-            date: new Date()
+            current: new Date()
         });
     }
 
     render() {
-        const {date, running} = this.state
+        const {current, running} = this.state
         return (
             <div>
-                <h2>{date.toLocaleTimeString()}.</h2>
+                <h2>{current.toLocaleTimeString()}.</h2>
                 <button onClick={this.toggleRunning}>{running ? "Stop" : "Start"}</button>
                 <button>Clear</button>
             </div>

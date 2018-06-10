@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Welcome from './components/welcome';
-import Clock from './components/clock';
-import Message from './components/Message';
+/* 
+  @flow
+*/
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Welcome from "./components/welcome";
+import Clock from "./components/clock";
+import Message from "./components/Message";
 
-class App extends Component {
+type Props = {};
+class App extends React.Component<Props> {
   render() {
     return (
       <div className="App">
@@ -14,9 +18,11 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <Welcome name="Eric">
-        <Message>Hello</Message>
+          <Message>Hello</Message>
         </Welcome>
-        <footer><Clock /></footer>
+        <footer>
+          <Clock />
+        </footer>
       </div>
     );
   }

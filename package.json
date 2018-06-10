@@ -1,8 +1,11 @@
 {
   "name": "react-test",
+  "main": "lib/index.js",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "buildflow": "babel src/ -d lib/",
+    "prepublish": "yarn run buildflow",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -13,5 +16,9 @@
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.74.0"
+  }
 }
