@@ -3,6 +3,10 @@
   "main": "lib/index.js",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ericxchang/react-test.git"
+  },
   "scripts": {
     "buildflow": "babel src/ -d lib/",
     "prepublish": "yarn run buildflow",
