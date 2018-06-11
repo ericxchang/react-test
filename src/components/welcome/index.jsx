@@ -4,7 +4,8 @@
 import React from "react";
 import Message from "../Message";
 type Props = {
-  name: string
+  name: string,
+  className: string
 };
 type State = {
   value: string,
@@ -54,7 +55,7 @@ export default class Welcome extends React.Component<Props, State> {
   inputNode: ?HTMLInputElement;
   render() {
     const { value, error } = this.state;
-
+    const {className} = this.props;
     return (
       <div
         className="container"
@@ -63,7 +64,7 @@ export default class Welcome extends React.Component<Props, State> {
         }}
       >
         <form onSubmit={this.handleSubmit}>
-          <Message>
+          <Message className={className}>
             Hello {value}
             <Message> Hello React </Message>
           </Message>

@@ -1,3 +1,4 @@
 import React from 'react';
-const Message = (props) => <div>{props.children}</div>
+
+const Message = (props) => <div className={props.className}>{props.children}</div>
 export default Message

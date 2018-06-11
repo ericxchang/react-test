@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it works 1`] = `
+.c0 {
+  color: red;
+}
+
+<div
+  className="c0"
+>
+  hello test
+</div>
+`;

@@ -16,13 +16,20 @@ const Page = styled.div`
 `;
 
 const Header = styled.header`
+  /*  override inline style  */
+  &[style] {
+    font-size: 12px !important;
+    color: blue !important;
+  }
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
 `;
 
-const Title = styled.h1`
+const Title = styled.h1.attrs({
+  className: "small text-danger"
+})`
   font-size: 1.5em;
 `;
 
@@ -36,17 +43,25 @@ const Logo = styled.img`
   height: 80px;
 `;
 
+const StyledMessage = styled(Message)`
+  color: red;
+  font-family: sans-serif;
+`;
+
+const StyledWelcome = styled(Welcome)`
+  color: red;
+  font-family: sans-serif;
+`;
 class App extends React.Component<Props> {
   render() {
     return (
       <Page>
         <Header>
           <Logo src={logo} alt="logo" />
-          <Title> Welcome to React </Title>
+          <Title>Welcome to React</Title>
         </Header>
-        <Welcome name="Eric">
-          <Message> Hello </Message>
-        </Welcome>
+        <StyledMessage>StyledHello</StyledMessage>
+        <StyledWelcome name="Eric" />
         <footer>
           <Clock />
         </footer>
